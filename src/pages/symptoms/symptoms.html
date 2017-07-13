@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button (click)="back()">
+        <ion-icon class="back-icon" name="ios-arrow-round-back"></ion-icon>
+        <span ion-text>Go back</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="symptoms-page" text-center padding no-bounce>
+  <h4 margin-left margin-right>
+    Record your symptoms by tapping a body area
+  </h4>
+  <div class="body-container">
+    <div *ngFor="let symptomPosition of symptomPositions" >
+      <i 
+        *ngIf="symptomPosition.side === flip"
+        [ngStyle]="{'top': symptomPosition.top +'px', 'left': symptomPosition.left+'px'}"
+        [ngClass]="{'completed': symptomPosition.completed}"
+        (click)="showCheckbox(symptomPosition)" 
+        class="fontello-icon icon-tick symptom-spot head fade-in"></i>
+    </div>  
+    <div class="flip-container" [ngClass]="{'flipped': (flip === 'rear')}">
+      <div class="flipper">
+        <div class="front-image">
+          <img class="body-image" src="assets/images/body_outline_female_front.png" height="500"/>
+        </div>
+        <div class="back-image">
+          <img class="body-image" src="assets/images/body_outline_female_rear.png" height="500"/>
+        </div>
+      </div>
+    </div>
+    <p class="skin-label fade-in" *ngIf="flip === 'front'">Skin</p>
+    <div (click)="toSymptomSummaryPage()" *ngIf="checkSymptomsComplete()" class="submit-symptoms">Review and send</div>
+    <div (click)="toggleFlip()" class="flip-button" [ngClass]="{'flipped': (flip === 'rear')}">
+      <i class="fontello-icon icon-flip_arrow flipper"></i>
+      <p *ngIf="flip === 'front'">Rear view</p>
+      <p *ngIf="flip === 'rear'">Front view</p>
+    </div>
+  </div>
+</ion-content>

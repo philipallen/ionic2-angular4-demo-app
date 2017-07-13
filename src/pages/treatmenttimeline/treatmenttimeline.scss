@@ -1,0 +1,98 @@
+page-treatmenttimeline,
+page-treatmenttimeline-detail {
+    .header .toolbar-background {
+        background-color: color($colors, alternative);
+        border-color: color($colors, alternative);
+    }
+
+    .treatmenttimeline-page {
+        background-color: color($colors, white);
+        color: color($colors, darkgrey);
+    }
+
+    .treatmenttimeline-detail {
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border-radius: 5px;
+    }
+
+    .mini-grid-container {
+        position: relative;
+        top: 50%;
+        transform: translate(0,-50%);
+        overflow-x: auto;
+        white-space: nowrap;
+        border-width: 0 1px 0 0;
+    }
+
+    .mini-grid {
+        width: 60%;
+        max-width: 250px;
+        display: inline-block;
+        padding: 0;
+        border-width: 0 0 1px 1px;
+        
+        & .circle {
+            width: 30px;
+            height: 30px;
+
+            & .fontello-icon {
+                font-size: 2rem;
+            }
+        }
+
+        & .first-header-row {
+            padding-top: 0;
+        }
+
+        & .content-row {
+            padding: 8px 0;
+        }
+
+        & .first-header-row {
+            border-radius: 0;
+        }
+    }
+
+    .grid {
+        background-color: color($colors, white);
+        padding: 0;
+    }
+
+    .circle {
+        width: 55px;
+        height: 55px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color: color($colors, white);
+        margin: 6px auto;
+    }
+
+    .grid-border {
+        border-color: color($colors, lightgrey);
+        border-style: solid;
+    }
+
+    .middle-column {
+        border-width: 0 1px;
+    }
+
+    .bottom-row {
+        border-width: 1px 0 0;
+    }
+
+    .grid-header {
+        background-color: color($colors, alternative);
+        color: color($colors, white);
+    }
+
+    .first-header-row {
+        padding-top: 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+}

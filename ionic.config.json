@@ -1,0 +1,11 @@
+{
+  "name": "NovartisPatient",
+  "app_id": "1f8bab8a",
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/v1",
+      "proxyUrl": "https://auth.exacttargetapis.com/v1"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Videos and articles
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="back()">
+        <ion-icon class="back-icon" name="ios-arrow-round-back"></ion-icon>
+        <span ion-text>Go back</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bookmark-page" padding [ngClass]="{
+    'video': bookmark.type === 'video',
+    'article': bookmark.type === 'article',
+    'podcast': bookmark.type === 'podcast'
+    }">
+  <p class="label small" text-uppercase>{{bookmark.date | date:'dd MMMM, yyyy'}}</p>
+  <h4>{{bookmark.title}}</h4>
+
+  <video
+    *ngIf="bookmark.type === 'video'"
+    width="100%" 
+    poster="assets/images/understanding-tasigna.jpg"
+    controls
+    (click)="onVideoClick($event)">
+      <source [src]="'assets/videos/' + bookmark.src" type="video/mp4">
+      Your browser does not support the video tag.
+  </video>
+
+  <button *ngIf="bookmark.type !== 'video'" ion-button color="primary">Link to {{bookmark.type}}</button>
+
+  <p margin-top class="label small" text-uppercase>About this {{bookmark.type}}</p>
+  <h5 padding-bottom class="about-section">{{bookmark.about}}</h5>
+
+  <div class="delete-from-bookmarks">
+    <div class="circle">
+      <ion-icon name="bookmark"></ion-icon>
+    </div>  
+    <p class="small">Delete this from my bookmarks</p>
+  </div>  
+</ion-content>

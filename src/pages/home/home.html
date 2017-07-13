@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce class="home-page" text-center padding>
+  <p text-uppercase class="small">
+    {{dateNow.toLocaleString('en-us', {  weekday: 'long' }) }}
+    {{dateNow.getDate()}}
+    {{dateNow.toLocaleString('en-us', {  month: 'long' }) }}
+  </p>
+  <h1>
+    Hello, Ulrika
+  </h1>
+
+  <h4 padding-top padding-bottom>
+    Have you taken your daytime dose yet?
+  </h4> 
+
+  <div class="toggle-container" padding-bottom>
+    <p padding-right text-uppercase class="small">No</p>
+    <ion-toggle [(ngModel)]="medicationTaken" (ionChange)="notifyMedicationTaken()" checked="false"></ion-toggle>  
+    <p padding-left text-uppercase class="small">Yes</p>
+  </div>  
+
+  <button (click)="presentMedicationDetails()" margin ion-button color="standard">View dose times and details</button>
+
+  <h4 padding-top margin-top>
+    How are you feeling today?
+  </h4> 
+
+  <div class="circles center-h">
+    <div class="square" float-right (click)="toUnwell()">
+      <div class="circle"></div>
+      <div class="circle-text rag-red">
+        <i class="fontello-icon icon-face_unwell"></i>
+        <p>I'm unwell</p>
+      </div>  
+    </div>  
+    <div class="square" float-left>
+      <div class="circle"></div>
+      <div class="circle-text rag-green">
+        <i class="fontello-icon icon-face_well"></i>
+        <p>I'm well</p>
+      </div>  
+    </div> 
+    <div class="square center-h">
+      <div class="circle"></div>
+      <div class="circle-text rag-amber">
+        <i class="fontello-icon icon-face_ok"></i>
+        <p>I'm OK</p>
+      </div>  
+    </div>
+  </div>
+
+</ion-content>

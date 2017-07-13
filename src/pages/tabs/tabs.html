@@ -1,0 +1,7 @@
+<ion-tabs #myTabs [color]="tabColour" (ionChange)="changeTab()" selectedIndex="0">
+  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="custom-home-icon"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="My Resources" tabIcon="custom-resources-icon"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="Let's Talk" tabIcon="custom-lets-talk-icon"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="Appointments" tabIcon="custom-appointment-icon" tabBadge="2" tabBadgeStyle="danger"></ion-tab>
+  <ion-tab (ionSelect)="openMenu()" tabTitle="More" tabIcon="custom-more-icon"></ion-tab>
+</ion-tabs>

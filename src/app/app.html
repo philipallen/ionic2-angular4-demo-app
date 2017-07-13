@@ -1,0 +1,35 @@
+<ion-menu type="overlay" side="right" [content]="content">
+    <ion-toolbar>
+        <ion-buttons end>
+            <button ion-button (click)="closeMenu()">
+            <span padding-right ion-text>Close</span>
+            <ion-icon name="ios-arrow-round-forward"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <ion-content>
+        <textarea>{{TOKEN}}</textarea>
+        <div *ngFor="let menuAction of MENUACTIONS" class="menu-actions" padding-left>
+            <div class="circle">
+                <i [ngClass]="menuAction.icon" class="small-icon fontello-icon icon-sheets"></i>
+            </div>
+            <h5 padding-left>{{menuAction.title}}</h5>  
+        </div> 
+        <ion-list padding-top>
+            <ion-item *ngFor="let person of MYPEOPLE">
+                <ion-avatar item-start>
+                    <img [src]="'assets/images/' + person.src">
+                </ion-avatar>
+                <p text-uppercase class="tiny">{{person.role}}</p>
+                <p>{{person.name}}</p>
+            </ion-item>
+        </ion-list>
+        <ion-list padding-top>
+            <ion-item *ngFor="let menuItem of MENUITEMS"><p>{{menuItem.title}}</p></ion-item>  
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>

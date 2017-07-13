@@ -1,0 +1,25 @@
+page-medicationconfirmation {
+    .medicationconfirmation-page {
+        color: color($colors, midgrey);
+    }
+
+    .header {
+        background-color: color($colors, alternative);
+        color: color($colors, white);
+    }
+
+    ion-item.item-block.item-datetime {
+        padding: 0;
+
+        .item-inner {
+            padding: 0;
+        }
+    }
+
+    ion-datetime.datetime {
+        margin: 0 auto;
+        border: 1px solid grey;
+        padding: 10px;
+    }
+    
+}

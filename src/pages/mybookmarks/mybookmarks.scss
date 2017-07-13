@@ -1,0 +1,59 @@
+page-mybookmarks {
+    .header .toolbar-background {
+        background-color: color($colors, alternative);
+        border-color: color($colors, alternative);
+    }
+
+    .mybookmarks-page {
+        color: color($colors, darkgrey);
+    }
+
+    .item.item-block .item-inner {
+        border-bottom: 1px solid color($colors, lightgrey);
+        padding: 7px 0;
+    }
+
+    .date-label {
+        padding-bottom: 5px;
+    }
+
+    .item.item-block.video {
+        & .circle,
+        & ion-icon,
+        & .date-label {
+            color: color($colors, standard);
+            border-color: color($colors, standard);
+        }
+    }
+
+    .item.item-block.article {
+        & .circle,
+        & ion-icon,
+        & .date-label {
+            color: color($colors, alternative);
+            border-color: color($colors, alternative);
+        }
+    }
+
+    .item.item-block.podcast {
+        & .circle,
+        & ion-icon,
+        & .date-label {
+            color: color($colors, primary);
+            border-color: color($colors, primary);
+        }
+    }
+
+    .circle {
+        background-color: color($colors, white);
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-style: solid;
+        border-width: 1px;
+        float: right;
+    }
+}

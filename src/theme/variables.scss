@@ -1,0 +1,156 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary: #0560a8,
+  secondary: #3781b9,
+  tertiary: #0561a7,
+  danger: #e84921,
+  light: #f4f4f4,
+  dark: #222,
+  alternative: #8c1f1c,
+  lightalternative: #a34c49,
+  standard: #ed991e,
+  lightstandard: #f1ad4c,
+  green: #339900,
+  white: white,
+  darkgrey: #545659,
+  midgrey: #7f7f7f,
+  lightgrey: #cccccc,
+  lightestgrey: #efeded
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+$font-family-base: Fira Sans, serif;
+$text-color: color($colors, white);
+/*Tabs*/
+$tabs-background: color($colors, secondary);
+$tabs-ios-tab-icon-color: color($colors, white);
+$tabs-ios-tab-text-color: color($colors, white);
+$tabs-ios-tab-icon-color-active: color($colors, white);
+$tabs-ios-tab-text-color-active: color($colors, white);
+$tabs-ios-tab-padding: 10px 0;
+$tabs-ios-border: 0;
+/*Toolbar*/ //More toolbar restyling in app.scss
+$toolbar-background: color($colors, primary);
+$toolbar-ios-border-color: color($colors, primary);
+$toolbar-ios-padding: 10px;
+$toolbar-ios-title-font-weight: normal;
+$toolbar-ios-height: 64px;
+$toolbar-ios-title-text-align: left;
+/*Alert*/ //More alert restyling in app.scss
+$alert-min-width: 100%;
+$alert-max-height: 360px;
+$alert-ios-message-empty-padding-bottom: 0;
+$alert-ios-checkbox-border-color-off: color($colors, lightgrey);
+$alert-ios-checkbox-background-color-off: color($colors, lightgrey);
+$alert-ios-checkbox-label-text-color: color($colors, darkgrey);
+$alert-ios-checkbox-label-text-color-checked: color($colors, darkgrey);
+$alert-ios-checkbox-icon-border-width: 1px;
+$alert-ios-head-padding-bottom: 12px;
+$alert-ios-border-radius: 0;
+$alert-ios-checkbox-label-padding: 17px 10px;
+$alert-ios-background: none;
+$alert-ios-button-background-color: color($colors, tertiary);
+$alert-ios-button-text-color: color($colors, white);
+$alert-ios-button-margin: 20px auto;
+$alert-ios-button-border-radius: 4px;
+$alert-ios-button-border-width: 0;
+$alert-ios-checkbox-icon-height: 14px;
+$alert-ios-checkbox-icon-width: 7px;
+$alert-ios-checkbox-icon-left: 6px;
+$alert-ios-checkbox-icon-top: 2px;
+$alert-ios-checkbox-icon-border-width: 3px;
+/*Items*/ //More alert restyling in app.scss
+$item-ios-paragraph-text-color: color($colors, midgrey);
+$item-ios-paragraph-font-size: 1.8rem;
+$item-ios-avatar-size: 56px;
+/*Searchbar*/ //More alert restyling in app.scss
+$searchbar-ios-background-color: color($colors, lightestgrey);
+$searchbar-ios-input-background-color: color($colors, lightestgrey);
+$searchbar-ios-toolbar-input-background: color($colors, lightestgrey);
+/*Menu*/ //More alert restyling in app.scss
+$menu-width: 290px;
+/*Toggle*/
+$toggle-ios-background-color-on: color($colors, green);
+$toggle-ios-background-color-off: color($colors, lightgrey);
+$toggle-ios-border-color-off: color($colors, lightgrey);
+$toggle-ios-handle-background-color: color($colors, white);
+$toggle-ios-width: 65px;
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+@import 'assets/fonts/fontello.scss';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700');

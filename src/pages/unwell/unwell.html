@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button (click)="back()">
+        <ion-icon class="back-icon" name="ios-arrow-round-back"></ion-icon>
+        <span ion-text>Go back</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce class="unwell-page" text-center padding>
+  <i class="fontello-icon icon-face_unwell"></i>
+  <h4 margin>
+    Ulrika, we're sorry to hear that you're not feeling so well today.
+  </h4> 
+  <h4 margin>
+    It's important that we get some detail on this so that we can decide how best to help you out.
+  </h4> 
+
+  <img (click)="toSymptoms()" class="symptom-checker" src="assets/images/symptom_checker_image.png" height="160"/>
+
+  <button margin ion-button color="white" (click)="toSymptoms()">Use the symptoms guide</button>
+  <h4>
+    Or you can also ...
+  </h4> 
+
+  <ion-grid>
+    <ion-row>
+      <ion-col ><button ion-button color="danger">Request help urgently</button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

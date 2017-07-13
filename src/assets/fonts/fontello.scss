@@ -1,0 +1,127 @@
+$fontello-font-path: $font-path !default;
+
+
+@font-face {
+  font-family: "Fontello";
+  src: url("#{$fontello-font-path}/fontello.woff2") format("woff2"),
+    url("#{$fontello-font-path}/fontello.woff") format("woff"),
+    url("#{$fontello-font-path}/fontello.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fontello-icon {
+  display: inline-block;
+  font-family: "Fontello";
+  font-size: 4rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  text-transform: none;
+  speak: none;
+
+  @include rtl() {
+    &[aria-label^="arrow"]::before,
+    &[flip-rtl]::before {
+      transform: scaleX(-1);
+    }
+
+    &[unflip-rtl]::before {
+      transform: scaleX(1);
+    }
+  }
+
+  &::before {
+    display: inline-block;
+  }
+
+  // &.icon-edit_pen:before { content: '\e800'; } /* '' */
+  // &.icon-face_ok:before { content: '\e801'; } /* '' */
+  // &.icon-face_unwell:before { content: '\e802'; } /* '' */
+  // &.icon-face_well:before { content: '\e803'; } /* '' */
+  // &.icon-flip_arrow:before { content: '\e804'; } /* '' */
+  // &.icon-nav_appointments:before { content: '\e805'; } /* '' */
+  // &.icon-nav_home:before { content: '\e806'; } /* '' */
+  // &.icon-nav_letstalk:before { content: '\e807'; } /* '' */
+  // &.icon-nav_more:before { content: '\e808'; } /* '' */
+  // &.icon-nav_treatment:before { content: '\e809'; } /* '' */
+  // &.icon-tick:before { content: '\e80a'; } /* '' */
+
+  &.icon-nav_home:before { content: '\e800'; } /* '' */
+  &.icon-resources:before { content: '\e801'; } /* '' */
+  &.icon-nav_letstalk:before { content: '\e802'; } /* '' */
+  &.icon-nav_appointments:before { content: '\e803'; } /* '' */
+  &.icon-nav_more:before { content: '\e804'; } /* '' */
+  &.icon-face_well:before { content: '\e805'; } /* '' */
+  &.icon-face_ok:before { content: '\e806'; } /* '' */
+  &.icon-face_unwell:before { content: '\e807'; } /* '' */
+  &.icon-flip_arrow:before { content: '\e808'; } /* '' */
+  &.icon-tick:before { content: '\e809'; } /* '' */
+  &.icon-edit_pen:before { content: '\e80a'; } /* '' */
+  &.icon-camera:before { content: '\e80b'; } /* '' */
+  &.icon-nav_treatment:before { content: '\e80c'; } /* '' */
+  &.icon-star_jump:before { content: '\e80d'; } /* '' */
+  &.icon-film:before { content: '\e80e'; } /* '' */
+  &.icon-sheets:before { content: '\e80f'; } /* '' */
+  &.icon-frequency:before { content: '\e810'; } /* '' */
+  &.icon-search:before { content: '\e811'; } /* '' */
+  &.icon-novartis:before { content: '\e812'; } /* '' */
+  &.icon-settings:before { content: '\e813'; } /* '' */
+  &.icon-person:before { content: '\e814'; } /* '' */
+  &.icon-pin:before { content: '\e815'; } /* '' */
+}
+
+/*Tab icons - using custom icons, so have to hack it a bit...*/
+.ion-ios-custom-home-icon::before,
+.ion-ios-custom-home-icon-outline::before,
+.ion-md-custom-home-icon::before {
+    @extend .fontello-icon;
+    content: "\e800"; //Home icon. NB: this may also have to be changed if you import a new font file
+    position: relative;
+    bottom: 2px;
+    font-size: 2.9rem;
+}
+
+.ion-ios-custom-resources-icon::before,
+.ion-ios-custom-resources-icon-outline::before,
+.ion-md-custom-resources-icon::before {
+    @extend .fontello-icon;
+    content: "\e801"; //Resources icon. NB: this may also have to be changed if you import a new font file
+    position: relative;
+    bottom: 2px;
+    font-size: 3rem;
+}
+
+.ion-ios-custom-lets-talk-icon::before,
+.ion-ios-custom-lets-talk-icon-outline::before,
+.ion-md-custom-lets-talk-icon::before {
+    @extend .fontello-icon;
+    content: "\e802"; //Let's talk icon. NB: this may also have to be changed if you import a new font file
+    position: relative;
+    bottom: 1px;
+    font-size: 3rem;
+}
+
+.ion-ios-custom-appointment-icon::before,
+.ion-ios-custom-appointment-icon-outline::before,
+.ion-md-custom-appointment-icon::before {
+    @extend .fontello-icon;
+    content: "\e803"; //Appointment icon. NB: this may also have to be changed if you import a new font file
+    position: relative;
+    bottom: 2px;
+    font-size: 2.9rem;
+}
+
+.ion-ios-custom-more-icon::before,
+.ion-ios-custom-more-icon-outline::before,
+.ion-md-custom-more-icon::before {
+    @extend .fontello-icon;
+    content: "\e804"; //More icon. NB: this may also have to be changed if you import a new font file
+    position: relative;
+    bottom: -1px;
+    font-size: 2.9rem;
+}

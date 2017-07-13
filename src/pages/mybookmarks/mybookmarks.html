@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Videos and articles
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="back()">
+        <ion-icon class="back-icon" name="ios-arrow-round-back"></ion-icon>
+        <span ion-text>Go back</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="mybookmarks-page" padding>
+  <ion-searchbar
+    (ionInput)="filterBookmarks($event)"
+    placeholder="Search bookmarks">
+  </ion-searchbar>
+  <ion-list>
+    <ion-item no-padding *ngFor="let bookmark of bookmarks"
+      (click)="goToBookmark(bookmark)"
+      [ngClass]="{
+        'video': bookmark.type === 'video',
+        'article': bookmark.type === 'article',
+        'podcast': bookmark.type === 'podcast'
+        }">
+      <ion-avatar item-end>
+        <div class="circle standard-border center-h">
+          <i *ngIf="bookmark.type === 'video'" class="medium-icon fontello-icon icon-film center-h"></i>
+          <i *ngIf="bookmark.type === 'article'" class="medium-icon fontello-icon icon-sheets center-h"></i>
+          <ion-icon *ngIf="bookmark.type === 'podcast'" class="small-icon" name="phone-portrait"></ion-icon>
+        </div>
+      </ion-avatar>
+      <p class="small date-label">{{bookmark.date | date:'dd MMMM, yyyy'}}</p>
+      <p class="line-height-double" text-wrap>{{bookmark.title}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

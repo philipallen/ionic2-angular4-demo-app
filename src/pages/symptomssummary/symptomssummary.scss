@@ -1,0 +1,28 @@
+page-symptomssummary {
+    .symptomssummary-page {
+        background-color: color($colors, white);
+        color: color($colors, darkgrey);
+    }
+
+    .symptom-position-block {
+        padding: 15px 0;
+        border-bottom: 1px solid color($colors, lightgrey);
+    }
+
+    .symptom-row {
+        display: flex;
+        align-items: center;
+    }
+
+    .bullet {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        border: 1px solid color($colors, standard);
+    }
+
+    .symptom-text {
+        padding-left: 10px;
+        margin: 5px 0;
+    }
+}

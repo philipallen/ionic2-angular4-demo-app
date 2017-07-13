@@ -1,0 +1,10 @@
+Hack-y things:
+
+FONTELLO:
+fontello icons are imported, but referenced incorrectly.
+Currently used like this: 
+    <i class="fontello-icon"></i> <--The rectangle character is a tick icon in this case
+But should be something like this: 
+    <i class="fontello-icon tick-icon"></i>
+Or even this (as ionic does it):
+    <fontello-icon name="tick-icon"></fontello-icon>

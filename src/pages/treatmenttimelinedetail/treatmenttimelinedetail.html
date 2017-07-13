@@ -1,0 +1,53 @@
+<ion-content class="treatmenttimeline-page treatmenttimeline-detail condensed-modal" text-center no-bounce>
+  <ion-grid>
+    <ion-row class="grid-header first-header-row">
+      <ion-col><p text-uppercase class="small">{{treatment.date | date:'y'}}</p></ion-col>
+    </ion-row>
+    <ion-row class="grid-header">
+      <ion-col text-uppercase><h4>{{treatment.date | date:'MMMM'}} {{treatment.date | date:'d'}}</h4></ion-col>
+    </ion-row>
+    <ion-row padding-bottom padding-top>
+      <ion-col>
+        <ion-row justify-content-center>
+          <i *ngIf="treatment.feeling === 'unwell'" class="rag-red large-icon fontello-icon icon-face_unwell"></i>
+          <i *ngIf="treatment.feeling === 'well'" class="rag-green large-icon fontello-icon icon-face_well"></i>
+          <i *ngIf="treatment.feeling === 'ok'" class="rag-amber large-icon fontello-icon icon-face_ok"></i>
+        </ion-row>
+        <ion-row>
+          <ion-col><p text-uppercase class="small">Feeling</p></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><h2 no-margin>{{treatment.feeling}}</h2></ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col class="grid-border middle-column">
+        <ion-row justify-content-center>
+          <div [ngClass]="ragService.getRagForAdherence(treatment.adherence, true)" class="circle"><i class="fontello-icon icon-nav_treatment center-h"></i></div>
+        </ion-row>
+        <ion-row>
+          <ion-col><p text-uppercase class="small">Adherence</p></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><h2 no-margin>{{treatment.adherence}}%</h2></ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row justify-content-center>
+          <div [ngClass]="ragService.getRagForActivity(treatment.activity, true)" class="circle"><i class="fontello-icon icon-star_jump center-h"></i></div>
+        </ion-row>
+        <ion-row>
+          <ion-col><p text-uppercase class="small">Activity</p></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col><h2 no-margin>{{treatment.activity}}/10</h2></ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row padding-top class="grid-border bottom-row">
+      <ion-col><p text-uppercase class="small">Notes</p></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><h4>{{treatment.notes}}</h4></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

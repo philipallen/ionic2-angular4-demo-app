@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>My symptoms</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="white" showWhen="ios">&#10060;</span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content no-bounce padding class="symptomssummary-page">
+  <div class="symptom-position-block">
+    <h4>You have indicated that you are experiencing the following symptoms. Please check them again to make sure they are accurate.</h4>
+  </div>  
+
+  <div *ngFor="let symptomPosition of symptomPositions">
+    <div class="symptom-position-block" *ngIf="symptomPosition.completed"> <!--TODO can probably use a pipe rather than ngIf here-->
+      <p text-uppercase class="small rag-amber">{{symptomPosition.position}}</p>
+      <div *ngFor="let symptom of symptomPosition.options">
+        <div class="symptom-row" *ngIf="symptom.checked"> <!--TODO can probably use a pipe rather than ngIf here-->
+          <div class="bullet"></div>
+          <h4 class="symptom-text">{{symptom.label}}</h4>
+        </div>  
+      </div>  
+    </div>
+  </div>  
+
+  <h4 padding-top>Make additional notes here</h4>
+  <ion-textarea [(ngModel)]="additionalNotes"></ion-textarea>
+
+  <div text-center>
+    <button (click)="submitSymptoms()" margin ion-button color="primary">Send symptoms list now</button>
+  </div>  
+</ion-content>

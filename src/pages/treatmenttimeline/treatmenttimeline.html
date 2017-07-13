@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Treatment timeline
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="back()">
+        <ion-icon class="back-icon" name="ios-arrow-round-back"></ion-icon>
+        <span ion-text>Go back</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="treatmenttimeline-page" text-center no-bounce>
+  <div class="mini-grid-container grid-border">
+    <ion-grid class="mini-grid grid-border" *ngFor="let treatment of treatments" (click)="presentTreatmentDetail(treatment)">
+      <ion-row class="grid-header first-header-row">
+        <ion-col><p text-uppercase class="tiny">{{treatment.date | date:'y'}}</p></ion-col>
+      </ion-row>
+      <ion-row class="grid-header">
+        <ion-col text-uppercase><h6 no-margin>{{treatment.date | date:'MMMM'}} {{treatment.date | date:'d'}}</h6></ion-col>
+      </ion-row>
+      <ion-row class="content-row">
+        <ion-col>
+          <ion-row justify-content-center>
+            <i *ngIf="treatment.feeling === 'unwell'" class="rag-red fontello-icon icon-face_unwell"></i>
+            <i *ngIf="treatment.feeling === 'well'" class="rag-green fontello-icon icon-face_well"></i>
+            <i *ngIf="treatment.feeling === 'ok'" class="rag-amber fontello-icon icon-face_ok"></i>
+          </ion-row>
+          <ion-row>
+            <ion-col><p text-uppercase class="tiny">Feeling</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><h4 no-margin>{{treatment.feeling}}</h4></ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col class="grid-border middle-column">
+          <ion-row justify-content-center>
+            <div [ngClass]="ragService.getRagForAdherence(treatment.adherence, true)" class="circle"><i class="fontello-icon icon-nav_treatment center-h"></i></div>
+          </ion-row>
+          <ion-row>
+            <ion-col><p text-uppercase class="tiny">Adherence</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><h4 no-margin>{{treatment.adherence}}%</h4></ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col>
+          <ion-row justify-content-center>
+            <div [ngClass]="ragService.getRagForActivity(treatment.activity, true)" class="circle"><i class="fontello-icon icon-star_jump center-h"></i></div>
+          </ion-row>
+          <ion-row>
+            <ion-col><p text-uppercase class="tiny">Activity</p></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col><h4 no-margin>{{treatment.activity}}/10</h4></ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="grid-border bottom-row">
+        <ion-col><p text-uppercase class="tiny">Notes</p></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col><h6 no-margin text-wrap>{{treatment.notes}}</h6></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>  
+
+</ion-content>

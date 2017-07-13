@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="myresources-page" text-center no-bounce>
+  <h4 text-uppercase>My Resources</h4>
+  <i margin class="fontello-icon icon-resources large-icon"></i>
+
+  <ion-list padding-top>
+    <ion-item *ngFor="let resource of RESOURCES" (click)="toPage(resource.page)"><p>{{resource.title}}</p></ion-item>  
+  </ion-list>
+
+</ion-content>
